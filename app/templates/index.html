@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An AI-powered DSA interview practice coach." />
+    <title>Interview Coach · DSA practice</title>
+    <link rel="stylesheet" href="/static/styles.css?v=4" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <p class="eyebrow">LANGGRAPH-POWERED PRACTICE</p>
+        <h1>Think like an interviewer.</h1>
+        <p class="subtitle">Get a clear path to the solution—without code or spoilers.</p>
+      </section>
+
+      <section class="question-panel" aria-labelledby="question-label">
+        <label id="question-label" for="question">Your interview question</label>
+        <textarea id="question" maxlength="6000" placeholder="e.g. Given a string, find the length of the longest substring without repeating characters."></textarea>
+        <div class="actions">
+          <span id="char-count" aria-live="polite">0 / 6000</span>
+          <button id="analyze-button" type="button">Analyze question <span aria-hidden="true">→</span></button>
+        </div>
+        <p id="error-message" class="error" role="alert" hidden></p>
+      </section>
+
+      <section id="loading" class="loading" hidden aria-live="polite">
+        <span class="spinner"></span> Three AI coaching steps are reviewing your question…
+      </section>
+
+      <section id="results" class="results" aria-live="polite" hidden>
+        <div class="overview-grid">
+          <article class="card accent-card"><p class="card-label">Difficulty</p><h2 id="difficulty"></h2></article>
+          <article class="card accent-card"><p class="card-label">Primary pattern</p><h2 id="pattern"></h2></article>
+          <article class="card"><p class="card-label">Time complexity</p><h2 id="time-complexity"></h2></article>
+          <article class="card"><p class="card-label">Space complexity</p><h2 id="space-complexity"></h2></article>
+        </div>
+        <div class="detail-grid">
+          <article class="card wide"><p class="card-label">Algorithm idea</p><p id="algorithm" class="body-copy"></p></article>
+          <article class="card"><p class="card-label">Better solution?</p><h2 id="better-solution"></h2><p id="better-notes" class="muted"></p></article>
+        </div>
+        <div class="detail-grid">
+          <article class="card"><p class="card-label">Progressive hints</p><ol id="hints" class="numbered-list"></ol></article>
+          <article class="card"><p class="card-label">Interviewer follow-ups</p><ol id="follow-ups" class="numbered-list"></ol></article>
+        </div>
+      </section>
+    </main>
+    <script src="/static/app.js?v=4"></script>
+  </body>
+</html>
